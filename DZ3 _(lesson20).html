@@ -1,0 +1,87 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Курс Основы современного JavaScript с нуля для начинающих</title>
+	<style type="text/css">
+		.info ul {
+			font-size: 9px;
+			padding: 0;
+		}
+	</style>
+</head>
+<body>
+
+	<p><b>Ваш индекс массы тела:</b> <span id="information">...введите данные...</span></p>
+
+	<form id="fff">
+		Ваш вес? (кг):
+		<br>
+		<input type="text" name="weight">
+		<br>
+		<br>
+		Ваш рост? (см):
+		<br>
+		<input type="text" name="height">
+		<br>
+		<br>
+		<input id="butt" type="button" value="Узнать ИТМ">
+	</form>
+
+	<div class="info">
+		<ul>
+			<li>Курс [Udemy] [YouRa Allakhverdov] Основы современного JavaScript с нуля для начинающих (2021)</li>
+			<li>Домашка №3 Урок 20</li>
+		</ul>
+	</div>
+
+	<script>
+	butt.onclick = function() {
+	
+		let weight = fff.elements.weight.value;
+		let height = fff.elements.height.value;
+
+		let indexBody = function (weight, height) {
+			let index = (parseFloat(weight) / (parseFloat(height/100)**2)).toFixed(2);
+
+			if (index >= 1 && index < 16.5)
+			{
+				return `${index} тебе надо очень много кушать`;
+			} 
+			else if (index >= 16.5 && index <= 18.4)
+			{
+				return `${index} тебе надо больше кушать`;
+			}
+			else if (index >= 18.5 && index < 24.9)
+			{
+				return `${index} ты идеален, как такого достичь?`;
+			}
+			else if (index >= 25 && index <= 30)
+			{
+				return `${index} тебе надо бы схуднуть`;
+			}
+			else if (index >= 30.1 && index <= 34.9)
+			{
+				return `${index} Ожирение (Класс I)`;
+			}
+			else if (index >= 35 && index <= 39.9)
+			{
+				return `${index} Ожирение (Класс II)`;
+			}
+			else if (index >= 40)
+			{
+				return `${index} Ожирение (Класс III)`;
+			}
+			else
+			{
+				return `Данные не верны! Введи заново данные!`;
+			}
+		}
+
+
+		
+		document.getElementById('information').innerHTML = indexBody(weight, height);
+	};
+	</script>
+
+</body>
+</html>

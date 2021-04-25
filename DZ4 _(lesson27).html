@@ -1,0 +1,40 @@
+<html>
+<head>
+	<title>Курс Основы современного JavaScript с нуля для начинающих</title>
+	<style type="text/css">
+		.info {
+			font-size: 9px;
+			padding: 0;
+		}
+	</style>
+</head>
+<body>
+
+	<h3>Можно ли мне купить алкоголь?</h3>
+	<div>Введите ваш возвраст.</div>
+	
+	<form id="form1">
+	<input type="text" name="age" id="aaa" placeholder="18+">
+	</form>
+
+	<div id="information">Чтобы узнать, введите ваш возвраст в форму выше</div>
+
+	<div class="info">
+		<ul>
+			<li>Курс [Udemy] [YouRa Allakhverdov] Основы современного JavaScript с нуля для начинающих (2021)</li>
+			<li>Домашка №4 Урок 27</li>
+		</ul>
+	</div>
+
+	<script>
+		aaa.oninput = function() {
+			let meeAge = form1.elements.age.value;
+			let infoMess = meeAge < 18 ? `Вам ${meeAge} <br>Вам не льзя пить алкоголь!!! Вы не достигли совершенолетия!`: `Вам ${meeAge} <br>Можете купть бутылочку спиртного и раслабиться :))`;		
+			
+			document.getElementById('information').innerHTML = `${infoMess}`;
+		}
+		
+	</script>
+
+</body>
+</html>

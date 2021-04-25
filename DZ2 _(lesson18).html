@@ -1,0 +1,70 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Курс Основы современного JavaScript с нуля для начинающих</title>
+	<style type="text/css">
+		.info {
+			font-size: 9px;
+			padding: 0;
+		}
+	</style>
+</head>
+<body>
+
+	<h3>Ваш индекс массы тела</h3>
+	<div id="information"></div>
+
+	<div class="info">
+		<ul>
+			<li>Курс [Udemy] [YouRa Allakhverdov] Основы современного JavaScript с нуля для начинающих (2021)</li>
+			<li>Домашка №2 Урок 18</li>
+		</ul>
+	</div>
+
+	<script>
+	let weight = prompt('Ваш вес? (кг)');
+	let height = prompt('Ваш рост? (см)');
+
+	let indexBody = function (weight, height) {
+		let index = (parseFloat(weight) / (parseFloat(height/100)**2)).toFixed(2);
+
+		if (index >= 1 && index < 16.5)
+		{
+			return `${index} тебе надо очень много кушать`;
+		} 
+		else if (index >= 16.5 && index <= 18.4)
+		{
+			return `${index} тебе надо больше кушать`;
+		}
+		else if (index >= 18.5 && index < 24.9)
+		{
+			return `${index} ты идеален, как такого достичь?`;
+		}
+		else if (index >= 25 && index <= 30)
+		{
+			return `${index} тебе надо бы схуднуть`;
+		}
+		else if (index >= 30.1 && index <= 34.9)
+		{
+			return `${index} Ожирение (Класс I)`;
+		}
+		else if (index >= 35 && index <= 39.9)
+		{
+			return `${index} Ожирение (Класс II)`;
+		}
+		else if (index >= 40)
+		{
+			return `${index} Ожирение (Класс III)`;
+		}
+		else
+		{
+			return `перезагрузи страницу и введи заново данные!`;
+		}
+	}
+
+
+	document.getElementById('information').innerHTML = indexBody(weight, height);
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<html>
+<head>
+	<title>Курс Основы современного JavaScript с нуля для начинающих</title>
+	<style type="text/css">
+		.info {
+			font-size: 9px;
+			padding: 0;
+		}
+	</style>
+</head>
+<body>
+
+	<h3>Ваши данные</h3>
+	<div id="information"></div>
+
+	<div class="info">
+		<ul>
+			<li>Курс [Udemy] [YouRa Allakhverdov] Основы современного JavaScript с нуля для начинающих (2021)</li>
+			<li>Домашка №1 Урок 14</li>
+		</ul>
+	</div>
+
+	<script>
+	let firstName = prompt('Ваше имя?');
+	let lastName = prompt('Ваша фамилия?');
+	let age = prompt('Ваш возвраст?');
+
+	document.getElementById('information').innerHTML = `
+	<p>Имя: ${firstName}</p>
+	<p>Фамилия: ${lastName}</p>
+	<p>Возвраст: ${age}</p>
+	`;
+	</script>
+
+</body>
+</html>
